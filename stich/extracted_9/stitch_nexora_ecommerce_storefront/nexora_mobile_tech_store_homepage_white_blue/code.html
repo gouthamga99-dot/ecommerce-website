@@ -1,0 +1,532 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#7d2d00", "on-primary-container": "#eeefff", "surface-variant": "#dae2fd", "on-background": "#131b2e", "error-container": "#ffdad6", "tertiary-fixed": "#ffdbcd", "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-secondary": "#ffffff", "outline-variant": "#c3c6d7", "on-primary-fixed": "#00174b", "secondary": "#006398", "outline": "#737686", "surface-container-highest": "#dae2fd", "inverse-on-surface": "#eef0ff", "on-error-container": "#93000a", "tertiary": "#943700", "on-primary-fixed-variant": "#003ea8", "on-primary": "#ffffff", "secondary-fixed-dim": "#93ccff", "inverse-surface": "#283044", "secondary-container": "#5bb8fe", "inverse-primary": "#b4c5ff", "primary-fixed": "#dbe1ff", "surface-dim": "#d2d9f4", "on-secondary-container": "#00476e", "secondary-fixed": "#cce5ff", "on-secondary-fixed-variant": "#004b73", "tertiary-container": "#bc4800", "surface-container": "#eaedff", "on-error": "#ffffff", "primary": "#004ac6", "surface-tint": "#0053db", "tertiary-fixed-dim": "#ffb596", "on-tertiary-fixed": "#360f00", "primary-container": "#2563eb", "surface": "#faf8ff", "on-secondary-fixed": "#001d31", "on-surface": "#131b2e", "surface-container-high": "#e2e7ff", "background": "#faf8ff", "surface-container-low": "#f2f3ff", "on-surface-variant": "#434655", "surface-bright": "#faf8ff", "on-tertiary-container": "#ffede6", "primary-fixed-dim": "#b4c5ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "2rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "margin-sm": "1rem", "space-md": "1rem", "gutter-sm": "1rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "headline-lg": ["Hanken Grotesk"], "headline-sm": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "body-sm": ["Hanken Grotesk"], "display-hero-mobile": ["Hanken Grotesk"], "label-sm": ["Geist"], "headline-lg-mobile": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "label-lg": ["Geist"], "price-hero": ["Geist"], "body-md": ["Hanken Grotesk"], "display-hero": ["Hanken Grotesk"], "label-md": ["Geist"] }, fontSize: { "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }], "display-hero-mobile": ["38px", { lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "700" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-lg-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "26px", letterSpacing: "-0.005em", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }], "price-hero": ["32px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }], "display-hero": ["64px", { lineHeight: "72px", letterSpacing: "-0.03em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }] } } } };</script></head><body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-white"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 px-space-md flex flex-col justify-between py-space-xs"><div class="flex items-center justify-between gap-space-sm h-12"><div class="flex items-center gap-space-sm"><img alt="NEXORA brand logo for light mode with white and blue theme, featuring stylized N monogram and NEXORA wordmark with tagline 'TECHNOLOGY, SIMPLIFIED.'. Brand logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X-uDmil0FTYRqREHDebSfzF_01RJWOu1l9IiuW12cOrRBW9XJHJXoodzKd2bg0GUSYd3FgmHPfU9jmbIPMbH6lV6t1S2InUo5yTqY3EeK9siy29HGDYQFbIWL796wO6FqMBR4NNTUtxXYmAO6efR8jKQFJwrskxut_2SDAD-ree0oKaENuU3gqUMnbmQWHa6O6CalKoSg5ziVYO7nGOBG37-T4OiTT00D8He-IdiX21yzR8Pv2_-45Gp4"><div class="hidden sm:flex flex-col"><span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">NEXORA</span><span class="font-headline-sm text-headline-sm text-on-surface hidden">Explore Categories</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="View Cart" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-1.5 right-1.5 min-w-[18px] h-[18px] px-1 bg-primary text-white font-label-sm text-label-sm rounded-full flex items-center justify-center font-bold">2</span></button><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WGeC9B25spkSKNwVeu_WayXqJtOtE9_6vZidKjc02rUR3JVfckO5Ws1QRj4eDnBaq_FWcR-k7pUK78I66wjtjyJkD6wIKZY2-Ep48bj0SEeHOl4CJaDdAZJWZ3nVmXNPAXD3HQ4QLCZmlYnX8cLD2sKzAIgXGh-r4MRIg_dFrQbPvxZNexqCzhWdgI6Pm7WAYOxNJOF_OUl0s2Dk7Mh5XHbPcyom_aN7q6xorNINe00I_srv0uYF9hVb4e"></div></div></div><div class="flex items-center gap-space-xs pb-space-xs"><div class="flex-1 flex items-center bg-surface-container-low px-space-sm rounded-lg h-10 gap-space-xs shadow-[0_1px_2px_rgba(0,0,0,0.02)]"><span class="material-symbols-outlined text-outline text-[18px]">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none" placeholder="Search precision audio, chips, rigs..." type="text"><button aria-label="Voice Search" class="w-7 h-7 flex items-center justify-center text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">mic</span></button><button aria-label="Filters" class="w-7 h-7 flex items-center justify-center text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">tune</span></button></div><div class="flex items-center gap-1 px-space-sm h-10 bg-surface-container-low rounded-lg text-primary max-w-[140px]"><span class="material-symbols-outlined text-[16px] shrink-0">location_on</span><div class="flex flex-col truncate"><span class="font-label-sm text-[9px] uppercase tracking-wider text-outline font-semibold leading-none">Deliver to</span><span class="font-label-sm text-label-sm font-semibold truncate text-on-surface leading-tight">Mumbai 400001</span></div></div></div></div></header><main class="flex flex-col relative w-full pt-28 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Fest & Delivery Announcement Pill Strip -->
+<div class="px-space-md py-space-xs bg-surface-container-high/70 backdrop-blur-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-on-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+</span>
+<span class="font-label-md text-label-md text-on-surface truncate font-semibold">
+          Republic Tech Fest • <span class="text-primary font-bold">Up to ₹18,000 Off</span>
+</span>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container/30 text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[12px] text-secondary">timer</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-tight">15-Min Metro</span>
+</div>
+</div>
+</div>
+<!-- Hero Spotlight: Titanium Performance Dual Showcase -->
+<section class="relative px-space-md pt-space-md pb-space-lg overflow-hidden">
+<div class="relative rounded-2xl bg-gradient-to-b from-surface-container-lowest via-surface-container-low to-surface-container-high/40 p-space-md shadow-sm">
+<!-- Decorative Glow behind device -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary-container/10 blur-2xl pointer-events-none"></div>
+<!-- Badge row -->
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold tracking-wide uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          New Flagship Series
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest shadow-sm text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">memory</span>
+          3nm NexSilicon X
+        </span>
+</div>
+<!-- Hero Device Visual -->
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm flex items-center justify-center my-space-xs">
+<img class="w-full h-full object-cover" data-alt="Futuristic dual tech flagship reveal featuring a matte titanium blue smartphone beside an ultrathin precision-milled titanium laptop, hovering gracefully in minimalist studio lighting with crisp sapphire glass reflections and deep oceanic blue gradients, commercial hardware luxury render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjcST4fiDQ6BUJCWx_a9tVole92y6GzP_2B76pOhljboHz4DkkQELTY5JoEh2OrOZwcaBMXe_Aey1hK5f88u8JY16dR5RLGvMd0_r8yzawnjcHtptB78c9ypm5sonxApzaZIsYgVJEMuvifIl4tK1pBe_6YZyhYR7Md07ygiOTLB5vjDM_t9DfU3vQJ9LpUkkZWaKIbHktvN4_fB9bPqL9me654IWk2Inj4nDZUbUR2yZevMLpDkmE5g">
+<!-- Live Float Chip -->
+<div class="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-2 rounded-xl bg-surface-container-lowest/95 backdrop-blur-md shadow-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">headphones</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Launch Perk</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Free Buds Pro (₹14,990)</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">Claim</span>
+</div>
+</div>
+<!-- Headline & Pricing -->
+<div class="mt-space-sm flex flex-col gap-1">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight font-bold">
+          The Next Era of Titanium Performance.
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Handcrafted aerospace-grade alloy casing with revolutionary dual vapor chamber thermal dynamics.
+        </p>
+</div>
+<!-- Price & Bank Rebate Grid -->
+<div class="mt-space-sm p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline font-semibold">Effective Price from</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-price-hero text-price-hero text-primary font-bold">₹1,49,990</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹1,69,990</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-bold bg-primary/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">credit_card</span>
+            ₹12,000 Off
+          </span>
+<span class="font-label-sm text-[10px] text-outline mt-0.5">Instant HDFC / ICICI Rebate</span>
+</div>
+</div>
+<!-- Primary Action Row -->
+<div class="mt-space-sm flex items-center gap-space-xs">
+<button class="flex-1 h-12 rounded-lg bg-primary-container text-white font-label-lg text-label-lg font-bold shadow-md hover:bg-primary transition-all flex items-center justify-center gap-2 active:scale-95">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span>Order Now &amp; Get Buds</span>
+</button>
+<button aria-label="Add to Wishlist" class="w-12 h-12 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm flex items-center justify-center hover:text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[22px]">favorite_border</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Quick Categories Horizontal Pills & 4-Col Grid -->
+<section class="px-space-md py-space-xs">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">category</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Curated Categories</h2>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5" href="#">
+        View All <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- 4-Column Grid -->
+<div class="grid grid-cols-4 gap-space-xs">
+<a class="flex flex-col items-center p-2 rounded-xl bg-surface-container-lowest shadow-sm text-center hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-1">
+<span class="material-symbols-outlined text-[22px]">smartphone</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate w-full">Phones</span>
+</a>
+<a class="flex flex-col items-center p-2 rounded-xl bg-surface-container-lowest shadow-sm text-center hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-11 h-11 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-1">
+<span class="material-symbols-outlined text-[22px]">laptop_mac</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate w-full">Laptops</span>
+</a>
+<a class="flex flex-col items-center p-2 rounded-xl bg-surface-container-lowest shadow-sm text-center hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-11 h-11 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container mb-1">
+<span class="material-symbols-outlined text-[22px]">sports_esports</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate w-full">Gaming</span>
+</a>
+<a class="flex flex-col items-center p-2 rounded-xl bg-surface-container-lowest shadow-sm text-center hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-11 h-11 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary mb-1">
+<span class="material-symbols-outlined text-[22px]">headphones</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate w-full">Audio</span>
+</a>
+<a class="flex flex-col items-center p-2 rounded-xl bg-surface-container-lowest shadow-sm text-center hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface mb-1">
+<span class="material-symbols-outlined text-[22px]">photo_camera</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate w-full">Cameras</span>
+</a>
+<a class="flex flex-col items-center p-2 rounded-xl bg-surface-container-lowest shadow-sm text-center hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-1">
+<span class="material-symbols-outlined text-[22px]">watch</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate w-full">Watches</span>
+</a>
+<a class="flex flex-col items-center p-2 rounded-xl bg-surface-container-lowest shadow-sm text-center hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-11 h-11 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-1">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate w-full">GaN Power</span>
+</a>
+<a class="flex flex-col items-center p-2 rounded-xl bg-surface-container-lowest shadow-sm text-center hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-1">
+<span class="material-symbols-outlined text-[22px]">dock</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate w-full">Docks</span>
+</a>
+</div>
+</section>
+<!-- High Urgency: Deals of the Day Flash Drops -->
+<section class="px-space-md py-space-md">
+<div class="rounded-2xl bg-gradient-to-br from-primary-container to-primary text-white p-space-md shadow-lg relative overflow-hidden">
+<!-- Glow element -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-xl pointer-events-none"></div>
+<!-- Top Row: Flash Banner & Real-Time Countdown -->
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[22px] text-secondary-fixed">local_fire_department</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed block font-bold">Limited Drop</span>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold leading-tight">Deals of the Day</h3>
+</div>
+</div>
+<!-- Live Countdown Timer Component -->
+<div class="flex items-center gap-1 bg-white/10 backdrop-blur-md px-2.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[14px] text-white">schedule</span>
+<span class="font-label-md text-label-md font-mono font-bold tracking-widest text-white" id="deal-timer">05:38:18</span>
+</div>
+</div>
+<!-- Flash Dropped Items Scroll / Stack -->
+<div class="flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<div class="p-space-sm rounded-xl bg-white text-on-surface flex items-center justify-between gap-space-sm shadow-sm">
+<div class="w-16 h-16 rounded-lg bg-surface-container-low shrink-0 overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Minimalist frosted mechanical 75 percent wireless keyboard with ice blue backlit RGB keycaps resting on brushed aluminum frame, commercial product photography studio packshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAi1UrgQ1QXIECzaPgIhdD0jfKwPOJ8rmlmwyWg-PbGWYp7iMPFP4ENhVVPkhWoEGWVoMnTzzAzblC-8P8zRkI6pyWHNMzD4vuAqeDctkvLTpuYgTO222vloaTl0Gdp0Cn3wU8eSM_ezhJ6B9MxG0x60-Nll_TiU8tEwEMCxd27puSYusdtNjkf-i5Z0nf-UIoKxF_FQ3oq5frG2psqC3Ho97Ary_OG1D69nhGgutUw9AP-7uu5rjwqA">
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-[10px] text-primary font-bold uppercase tracking-wider">Fast Mover • 12 Left</span>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface truncate">CyberKeys 75% Translucent</h4>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹7,990</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹12,490</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-lg bg-primary-container text-white flex items-center justify-center shrink-0 shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<!-- Item 2 -->
+<div class="p-space-sm rounded-xl bg-white text-on-surface flex items-center justify-between gap-space-sm shadow-sm">
+<div class="w-16 h-16 rounded-lg bg-surface-container-low shrink-0 overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="High power multi-port 140W gallium nitride desktop charging station in pure matte white with blue LED power status indicator and titanium prongs, high tech clean accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0U55_8Er-HRFdr2bhdgChtphEBkomwQaAV_UgFzIaots55_kGJGunqPPqugX4xDlPDkdGdxPlA9xnXpSLddI1JgpkNpDsb3q8BwfYJaEqSP95_tkAoRGAlWGz9J9NTcI99G_ALkqqA4uq4Ci_IsdE9JCUTGHkbSeBL0hs--gkcqxrDQ17IRL1hgKPE4ERPuQ66WIIPyt-wHNGIG1Ac6wcpQFdeVtSWaQioggilCS4CDbuv7IeGsjfFQ">
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">60% Off Flash</span>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface truncate">OmniCharge 140W GaN Dock</h4>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹3,890</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹9,990</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-lg bg-primary-container text-white flex items-center justify-center shrink-0 shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<!-- Item 3 -->
+<div class="p-space-sm rounded-xl bg-white text-on-surface flex items-center justify-between gap-space-sm shadow-sm">
+<div class="w-16 h-16 rounded-lg bg-surface-container-low shrink-0 overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Ultra lightweight gaming mouse with 8000Hz polling rate in arctic white with azure blue PTFE skates and ergonomic honeycomb skeleton, precision studio rendering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyZXNtxniE9C24t487RPPq-RoEflF5V8omnOQQ9LwD9BLMdsLg5WWgbJDI8jxI0nt0snPg6VvQieu1grFqq6ARIdL_9TSOkjixOEwjlmnUsvI7VOQ_XS_LyqVDUVL8ChTUBEc4JGr-v8wQV18xSAHyRbgXe6eti9nYlh0LRoy8H_QNTP8qvgrN6a3qy4WAfG_OaxHe5fT-3YFEcyKczS_KbG5vX3h536R0pVoTsN5poCzpEGA-Fn3mHA">
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-[10px] text-primary font-bold uppercase tracking-wider">Pro Esports Choice</span>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Phantom Speed Pro 8K Mouse</h4>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹5,490</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹8,990</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-lg bg-primary-container text-white flex items-center justify-center shrink-0 shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Flagships Section -->
+<section class="px-space-md py-space-xs">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Trending Flagships</h2>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-high px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Curated</span>
+</div>
+</div>
+<!-- 2-Column Product Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Product 1: Nexora StealthBook Pro 16" -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-0.5 rounded-md bg-primary/10 text-primary font-label-sm text-[10px] font-bold">
+            8% OFF
+          </span>
+</div>
+<div class="w-full h-36 rounded-lg bg-surface-container-low overflow-hidden flex items-center justify-center mb-space-sm relative">
+<img class="w-full h-full object-cover" data-alt="High-end slim 16 inch metallic silver laptop displaying crisp graphic design interfaces in pristine architectural workstation ambiance, Apple-like studio aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7SZ4q_g0N7-2t5KZJii9CUECYNTXWPpfbNSlazA7avk0YW_XwaG1HdoqJ4dvFRW9rhQcTAaZGc8xkrgaCA2zjWLVZi7tW9Yg76LtHgXwJxupzsA6M1HYt8cKWiPg1I9TZPHftpfNUYw2NQxqSgGcQGfTAv7wAGvqqRZ1UjO_rDYL97_ezRXn24K5IRzLdYLcWLubJ7GDV-BN6j0BUaPpT8gng0Cu-bDqk3NB60hDpOmcM6SLtUo8_cg">
+<button aria-label="Favorite" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">favorite_border</span>
+</button>
+</div>
+<div>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-[10px] text-outline">(342)</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface line-clamp-1">StealthBook Pro 16"</h3>
+<p class="font-body-sm text-body-sm text-outline mb-2">M3 Max Class • 32GB Unified</p>
+<div class="flex items-baseline gap-1 mb-space-sm">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹2,19,900</span>
+</div>
+</div>
+<button class="w-full h-10 rounded-lg bg-primary text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Add to Bag</span>
+</button>
+</div>
+<!-- Product 2: AcousticElite Pro ANC -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-0.5 rounded-md bg-secondary/10 text-secondary font-label-sm text-[10px] font-bold">
+            14% OFF
+          </span>
+</div>
+<div class="w-full h-36 rounded-lg bg-surface-container-low overflow-hidden flex items-center justify-center mb-space-sm relative">
+<img class="w-full h-full object-cover" data-alt="Over-ear audiophile noise-canceling headphones crafted in brushed aluminum and soft ivory vegan leather on minimalist museum podium pedestal, clean commercial white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsx_z4TntXYTFS7R5mM2QabSayFtuMsVkjfbCnWxfngsdSUs_IdBnn6Yymx3CcXSA6hoRnFCtrLFiPsjCSOCMnVG3ZKBNvJ8Wjqd8qKQ5kn7P5brJ4H9qdG_9GmlCAaZv2gYG2NiGLiNhyfkZYx4w2FlElnRw-GR82RzjgssW2X-z6OCJh0Wz3eJjSA8_18pb42mtmCrn9D2b_7GnQ-B-R3YtGrsOQVmHkHA53gaLorRP4ofqJ6cjnZQ">
+<button aria-label="Favorite" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">favorite_border</span>
+</button>
+</div>
+<div>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-[10px] text-outline">(890)</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface line-clamp-1">AcousticElite Pro ANC</h3>
+<p class="font-body-sm text-body-sm text-outline mb-2">Lossless Spatial • 60h Battery</p>
+<div class="flex items-baseline gap-1 mb-space-sm">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹29,990</span>
+</div>
+</div>
+<button class="w-full h-10 rounded-lg bg-primary text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Add to Bag</span>
+</button>
+</div>
+<!-- Product 3: Lumix Alpha X 8K Mirrorless -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-0.5 rounded-md bg-primary-container/10 text-primary-container font-label-sm text-[10px] font-bold">
+            Flagship
+          </span>
+</div>
+<div class="w-full h-36 rounded-lg bg-surface-container-low overflow-hidden flex items-center justify-center mb-space-sm relative">
+<img class="w-full h-full object-cover" data-alt="High precision cinematic mirrorless camera with large aperture prime lens resting on neutral architectural concrete block with subtle blue rim lighting, pro camera gear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAphsmhjFtjnU20whSGDPu2R-FuXUCnjUYZDc0UrpiA8MHEkL70uN7F-5nVwWkS9gdOanQmP9mAbdvMpFQ0AbzAozs-4ug58doIiTEWevarSdrzJGeJfBnzt8hb1Qq3Ncz8-uv9pzI_Dcps_asHw8EJY1N4qY-TbTAKNtE28V85pkDmvIVr3Ms86kfF50x_VxnvnY5Ac3wMA_o1wGwmKYu41ZSkMsMrCH8wBSTvOipEavl6i-UNoJaN8Q">
+<button aria-label="Favorite" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">favorite_border</span>
+</button>
+</div>
+<div>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-[10px] text-outline">(118)</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface line-clamp-1">Lumix Alpha X 8K</h3>
+<p class="font-body-sm text-body-sm text-outline mb-2">Full-Frame • 16-Stop RAW</p>
+<div class="flex items-baseline gap-1 mb-space-sm">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹1,84,990</span>
+</div>
+</div>
+<button class="w-full h-10 rounded-lg bg-primary text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Add to Bag</span>
+</button>
+</div>
+<!-- Product 4: Apex Titan Chrono GPS Watch -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-0.5 rounded-md bg-secondary/10 text-secondary font-label-sm text-[10px] font-bold">
+            11% OFF
+          </span>
+</div>
+<div class="w-full h-36 rounded-lg bg-surface-container-low overflow-hidden flex items-center justify-center mb-space-sm relative">
+<img class="w-full h-full object-cover" data-alt="Rugged aerospace grade titanium smartwatch with sapphire glass crystal and deep ocean blue ocean trail strap on minimal crystal stand, luxury sports wearable photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE4ytFnWDkdWcsHJ0ndDs_hMSKSOMXQ0tIoFAGRnPkUXcy3ZXeekIcCrDhvhmOPgXYHsz7mbjWvYpDFAvKSlo0KqsniLWiRCmohJLDFEA-CtZeIThFSRy7qdkgPLIONwB9yWgOlpUSjZZkAZQzQXVeCip_qPjUhAJsTHnMvkQF_QpbPFv_17_HswvGuIBH8JLuDx8UWA25YZx7EWPYDG2pZMWPbvqxwDxE431BIUycWx4-lkmzSTAKHQ">
+<button aria-label="Favorite" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">favorite_border</span>
+</button>
+</div>
+<div>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-[10px] text-outline">(640)</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface line-clamp-1">Apex Titan Chrono</h3>
+<p class="font-body-sm text-body-sm text-outline mb-2">Dual GPS • ECG Sapphire</p>
+<div class="flex items-baseline gap-1 mb-space-sm">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹39,990</span>
+</div>
+</div>
+<button class="w-full h-10 rounded-lg bg-primary text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Add to Bag</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Nexora Trade-In Quick Estimator -->
+<section class="px-space-md py-space-sm">
+<div class="p-space-md rounded-2xl bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[22px]">published_with_changes</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Nexora Trade-In Calculator</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Instant Credit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+        Exchange your old iPhone, Galaxy, or MacBook for direct doorstep discount and zero-cost pickup.
+      </p>
+<div class="flex flex-col gap-space-xs">
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="font-label-sm text-[10px] text-outline uppercase block font-semibold">Select Device</span>
+<select class="w-full bg-transparent font-label-md text-label-md text-on-surface focus:outline-none mt-1 font-semibold">
+<option>iPhone 14 Pro Max</option>
+<option>Samsung S23 Ultra</option>
+<option>MacBook Air M2</option>
+<option>iPad Pro 11" M2</option>
+</select>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="font-label-sm text-[10px] text-outline uppercase block font-semibold">Condition</span>
+<select class="w-full bg-transparent font-label-md text-label-md text-on-surface focus:outline-none mt-1 font-semibold">
+<option>Flawless / Pristine</option>
+<option>Minor Scratches</option>
+<option>Functional Wear</option>
+</select>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-outline">Estimated Valuation</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Up to ₹54,500</span>
+</div>
+<button class="px-4 h-10 rounded-lg bg-secondary text-white font-label-md text-label-md font-bold shadow-sm active:scale-95 transition-all">
+            Apply to Cart
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Nexora Trust & Service Guarantee Grid -->
+<section class="px-space-md py-space-sm">
+<div class="mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">The Nexora Promise</h3>
+<p class="font-body-sm text-body-sm text-outline">Direct brand assurance built for discerning buyers.</p>
+</div>
+<div class="grid grid-cols-2 gap-space-sm mt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1.5">
+<div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Serial Verification</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">100% Genuine factory-sealed units verified before dispatched.</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1.5">
+<div class="w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Concierge Setup</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complimentary doorstep unboxing and data migration support.</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1.5">
+<div class="w-9 h-9 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">shield_with_heart</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Nexora Care+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Zero-deductible accidental spill and screen protection.</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1.5">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">electric_bolt</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Express Dispatch</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Same-day delivery across Mumbai, Delhi NCR, and Bengaluru.</p>
+</div>
+</div>
+</section>
+<!-- Creator Reviews Reel -->
+<section class="px-space-md py-space-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Tested by Creators</h3>
+<p class="font-body-sm text-body-sm text-outline">Real-world benchmarkers &amp; developers</p>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-bold">
+        Verified Benchmarks
+      </span>
+</div>
+<!-- Creator Card -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary/10 overflow-hidden flex items-center justify-center text-primary font-bold">
+<span class="font-label-md text-label-md">RV</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Rohan Verma</h4>
+<span class="font-body-sm text-[11px] text-outline">Lead Architect • TechPulse India</span>
+</div>
+</div>
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+        "The StealthBook Pro 16 handled our full Docker development clusters and 8K ProRes timelines without spinning up fan noise once. Nexora's delivery was on my desk in Bandra in 22 minutes."
+      </p>
+</div>
+</section>
+<!-- Payment Trust & Indian Gateway Stack -->
+<section class="px-space-md pt-space-xs pb-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-outline font-semibold uppercase tracking-wider">Zero-Cost EMI &amp; Instant Checkout</span>
+<span class="font-label-sm text-[11px] text-secondary font-bold">RBI Compliant</span>
+</div>
+<div class="flex items-center justify-between gap-space-xs py-1">
+<div class="flex-1 py-1.5 px-2 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="font-label-md text-label-md font-bold tracking-tight text-on-surface">UPI / GPay</span>
+</div>
+<div class="flex-1 py-1.5 px-2 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="font-label-md text-label-md font-bold tracking-tight text-primary">RuPay</span>
+</div>
+<div class="flex-1 py-1.5 px-2 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="font-label-md text-label-md font-bold tracking-tight text-on-surface">HDFC EMI</span>
+</div>
+<div class="flex-1 py-1.5 px-2 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="font-label-md text-label-md font-bold tracking-tight text-secondary">Visa / MC</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Countdown Timer Micro-Interaction
+  (function () {
+    let totalSeconds = 5 * 3600 + 42 * 60 + 7;
+    const timerEl = document.getElementById('deal-timer');
+
+    if (timerEl) {
+      setInterval(function () {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+          const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+          const seconds = String(totalSeconds % 60).padStart(2, '0');
+          timerEl.textContent = hours + ':' + minutes + ':' + seconds;
+        }
+      }, 1000);
+    }
+  })();
+</script><footer class="mt-auto px-space-md py-space-lg bg-surface-container-low/60 flex flex-col gap-space-md"><div class="grid grid-cols-2 gap-space-sm"><div class="flex items-center gap-space-xs p-space-sm bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_rgba(15,23,42,0.03)]"><span class="material-symbols-outlined text-primary text-[20px]">verified_user</span><div class="flex flex-col"><span class="font-label-sm text-label-sm font-bold text-on-surface">1-Yr Warranty</span><span class="font-body-sm text-body-sm text-outline">Direct Brand Assured</span></div></div><div class="flex items-center gap-space-xs p-space-sm bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_rgba(15,23,42,0.03)]"><span class="material-symbols-outlined text-secondary text-[20px]">security</span><div class="flex flex-col"><span class="font-label-sm text-label-sm font-bold text-on-surface">100% Secure</span><span class="font-body-sm text-body-sm text-outline">UPI &amp; RuPay Enabled</span></div></div></div><div class="flex flex-col items-center justify-center gap-1 text-center py-space-xs"><p class="font-label-sm text-label-sm text-outline">NEXORA Technologies Pvt Ltd • Technology, Simplified.</p><p class="font-label-sm text-[10px] text-outline/80">ISO 9001:2015 Certified Hardware Store • Made for India</p></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 transition-colors text-primary font-bold" data-path="explore-categories" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm">Explore</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant transition-colors" data-path="deals-hub" href="#"><span class="material-symbols-outlined text-[22px]">local_offer</span><span class="font-label-sm text-label-sm">Deals</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant transition-colors" data-path="wishlist" href="#"><span class="material-symbols-outlined text-[22px]">favorite</span><span class="font-label-sm text-label-sm">Wishlist</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant transition-colors" data-path="user-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

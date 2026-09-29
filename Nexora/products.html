@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA — Flagship Smartphones & Foldables</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <div class="promo-text">
+        <span class="material-symbols-outlined bolt-icon">bolt</span>
+        <strong>Republic Tech Fest Live:</strong>
+        <span>Flat ₹5,000 Instant Discount on HDFC &amp; ICICI Cards | Free Express Delivery across India | No Cost EMI available</span>
+      </div>
+      <div class="quick-links">
+        <a href="#">Track Order</a>
+        <a href="#">Find a Store</a>
+        <a href="#">24x7 Support</a>
+        <span class="divider">|</span>
+        <div class="location-selector">
+          <span class="material-symbols-outlined">pin_drop</span>
+          <span>Mumbai 400001</span>
+        </div>
+        <span class="currency-badge">INR (₹)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/img_0.jpg" alt="NEXORA Brand Logo">
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Smartphones</a>
+        <a href="product.html">Laptops</a>
+      </nav>
+      <div class="search-bar">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search for phones, laptops...">
+      </div>
+      <div class="header-actions">
+        <button class="action-btn" aria-label="Account">
+          <span class="material-symbols-outlined">person</span>
+        </button>
+        <button class="action-btn" aria-label="Wishlist">
+          <span class="material-symbols-outlined">favorite</span>
+        </button>
+        <button class="action-btn cart-btn" aria-label="Cart" onclick="openCart()">
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="menu-header">
+      <img src="assets/images/img_0.jpg" alt="NEXORA" style="height:28px;">
+      <button class="close-btn" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="menu-items">
+      <a href="index.html"><span class="menu-icon material-symbols-outlined">home</span>Home</a>
+      <a href="products.html" class="active"><span class="menu-icon material-symbols-outlined">smartphone</span>Smartphones</a>
+      <a href="product.html"><span class="menu-icon material-symbols-outlined">laptop_mac</span>Laptops</a>
+    </div>
+    <div class="menu-footer">
+      <p>Deliver to: Mumbai 400001</p>
+      <p>INR (₹)</p>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html"><span class="material-symbols-outlined">home</span>Home</a>
+      <span class="separator">/</span>
+      <a href="#">Electronics</a>
+      <span class="separator">/</span>
+      <span class="current">Smartphones</span>
+      <span class="count-badge">48 Flagships Available</span>
+    </nav>
+  </div>
+
+  <!-- Category Header -->
+  <section class="section" style="padding-top:24px;">
+    <div class="container">
+      <div class="category-header">
+        <div>
+          <div class="category-tag">
+            <span class="pulse-dot"></span>
+            NEXT-GEN SILICON &amp; PERISCOPE OPTICS
+          </div>
+          <h1>Flagship Smartphones &amp; Foldables</h1>
+          <p class="category-desc">Experience blistering 3nm architectures, advanced periscope telephoto sensors, and all-day aerospace titanium endurance calibrated for perfectionists.</p>
+        </div>
+        <div class="assurance-badge">
+          <span class="material-symbols-outlined">verified_user</span>
+          <div>
+            <p class="badge-title">1 Year Nexora Assured</p>
+            <p class="badge-sub">Brand Warranty &amp; Zero-Fee EMI</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="filter-pills">
+        <button class="pill active">All Smartphones</button>
+        <button class="pill">Flagships</button>
+        <button class="pill">Foldables &amp; Flips</button>
+
+        <button class="pill">Under ₹30,000</button>
+        <button class="pill">5G Satellite Ready</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLP Layout -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="plp-layout">
+
+        <!-- Filter Sidebar -->
+        <aside class="filter-sidebar">
+          <div class="filter-header">
+            <div class="filter-title">
+              <span class="material-symbols-outlined">tune</span>
+              <h2>Filters</h2>
+            </div>
+            <button class="clear-btn" onclick="resetFilters()">Clear All</button>
+          </div>
+
+          <!-- Price Range -->
+          <div class="filter-group">
+            <div class="filter-label">
+              <span>Price Budget (₹)</span>
+              <span class="range-readout" id="price-readout">₹15k – ₹1.8L</span>
+            </div>
+            <input type="range" min="15000" max="180000" step="5000" value="180000" id="price-range" class="range-slider" oninput="updatePriceReadout(this.value)">
+            <div class="range-values">
+              <div class="range-box">
+                <span class="range-label">MIN (₹)</span>
+                <span class="range-value">15,000</span>
+              </div>
+              <div class="range-box">
+                <span class="range-label">MAX (₹)</span>
+                <span class="range-value primary" id="max-price-display">1,80,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brand -->
+          <div class="filter-group">
+            <div class="filter-label">
+              <span>Manufacturer</span>
+              <span class="filter-count">6 Brands</span>
+            </div>
+            <div class="checkbox-list">
+              <label class="checkbox-item">
+                <div class="checkbox-left">
+                  <input type="checkbox" checked>
+                  <span class="checkbox-label">Apple</span>
+                </div>
+                <span class="checkbox-count">14</span>
+              </label>
+              <label class="checkbox-item">
+                <div class="checkbox-left">
+                  <input type="checkbox" checked>
+                  <span class="checkbox-label">Samsung</span>
+                </div>
+                <span class="checkbox-count">18</span>
+              </label>
+              <label class="checkbox-item">
+                <div class="checkbox-left">
+                  <input type="checkbox">
+                  <span class="checkbox-label">Google Pixel</span>
+                </div>
+                <span class="checkbox-count">8</span>
+              </label>
+              <label class="checkbox-item">
+                <div class="checkbox-left">
+                  <input type="checkbox">
+                  <span class="checkbox-label">OnePlus</span>
+                </div>
+                <span class="checkbox-count">12</span>
+              </label>
+              <label class="checkbox-item">
+                <div class="checkbox-left">
+                  <input type="checkbox">
+                  <span class="checkbox-label">Xiaomi Flagship</span>
+                </div>
+                <span class="checkbox-count">9</span>
+              </label>
+              <label class="checkbox-item">
+                <div class="checkbox-left">
+                  <input type="checkbox">
+                  <span class="checkbox-label">Asus ROG</span>
+                </div>
+                <span class="checkbox-count">5</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- RAM -->
+          <div class="filter-group">
+            <span class="filter-label">Memory (RAM)</span>
+            <div class="chip-grid">
+              <button class="chip">8GB</button>
+              <button class="chip">12GB</button>
+              <button class="chip active">16GB</button>
+              <button class="chip">24GB</button>
+            </div>
+          </div>
+
+          <!-- Storage -->
+          <div class="filter-group">
+            <span class="filter-label">Storage Capacity</span>
+            <div class="chip-grid">
+              <button class="chip">128GB</button>
+              <button class="chip active">256GB</button>
+              <button class="chip">512GB</button>
+              <button class="chip">1TB</button>
+            </div>
+          </div>
+
+          <!-- Purchase Benefits -->
+          <div class="filter-group">
+            <span class="filter-label">Purchase Benefits</span>
+            <div class="checkbox-list">
+              <label class="checkbox-item">
+                <input type="checkbox" checked>
+                <span class="checkbox-label"><span class="material-symbols-outlined" style="font-size:14px;color:var(--tertiary);">payments</span> No-Cost EMI Available</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox">
+                <span class="checkbox-label"><span class="material-symbols-outlined" style="font-size:14px;color:var(--primary);">swap_horiz</span> Exchange Bonus (Up to ₹12k)</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" checked>
+                <span class="checkbox-label"><span class="material-symbols-outlined" style="font-size:14px;color:var(--secondary);">electric_bolt</span> Express 24H Delivery</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Rating -->
+          <div class="filter-group">
+            <span class="filter-label">Customer Ratings</span>
+            <div class="checkbox-list">
+              <label class="checkbox-item">
+                <div class="checkbox-left">
+                  <input type="radio" name="rating-filter">
+                  <span class="checkbox-label"><span style="color:var(--primary);">★</span> 4.5 &amp; above</span>
+                </div>
+                <span class="checkbox-count">32</span>
+              </label>
+              <label class="checkbox-item">
+                <div class="checkbox-left">
+                  <input type="radio" name="rating-filter">
+                  <span class="checkbox-label"><span style="color:var(--on-surface-variant);">★</span> 4.0 &amp; above</span>
+                </div>
+                <span class="checkbox-count">45</span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="plp-content">
+          <!-- Toolbar -->
+          <div class="plp-toolbar">
+            <div class="active-filters">
+              <span class="filter-label">Active:</span>
+              <span class="filter-chip">Brand: Apple <button class="remove-btn material-symbols-outlined">close</button></span>
+              <span class="filter-chip">Storage: 256GB+ <button class="remove-btn material-symbols-outlined">close</button></span>
+              <span class="filter-chip">₹50k - ₹1.5L <button class="remove-btn material-symbols-outlined">close</button></span>
+            </div>
+            <div class="toolbar-right">
+              <div class="sort-select">
+                <label>Sort:</label>
+                <select id="sort-select" onchange="sortProducts(this.value)">
+                  <option value="featured">Featured First</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="rating">Customer Rating</option>
+                  <option value="newest">Newest Arrivals</option>
+                </select>
+              </div>
+              <div class="view-toggle">
+                <button class="view-btn active" title="Grid View"><span class="material-symbols-outlined">grid_view</span></button>
+                <button class="view-btn" title="List View"><span class="material-symbols-outlined">view_list</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="product-grid" id="product-grid">
+            <!-- Products rendered by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/img_0.jpg" alt="NEXORA" style="height:32px;margin-bottom:16px;">
+          <p>Premium consumer electronics and computing hardware storefront. Engineered for the extraordinary.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="products.html">Smartphones</a>
+          <a href="product.html">Laptops</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Track Order</a>
+          <a href="#">Find a Store</a>
+          <a href="#">24x7 Support</a>
+          <a href="#">Warranty</a>
+          <a href="#">Returns</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About NEXORA</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NEXORA. All rights reserved. | Privacy Policy | Terms of Service</p>
+        <div class="payment-icons">
+          <span>UPI</span>
+          <span>Visa</span>
+          <span>Mastercard</span>
+          <span>RuPay</span>
+          <span>HDFC</span>
+          <span>ICICI</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <div class="cart-title">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <h2>Your Cart (<span id="cart-item-count">0</span> items)</h2>
+      </div>
+      <button class="close-btn" onclick="closeCart()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="cart-shipping">
+      <div class="shipping-row">
+        <span class="free-shipping"><span class="material-symbols-outlined">verified</span> Free Express Shipping Unlocked!</span>
+        <span class="threshold">₹1,999+</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="empty-cart" id="empty-cart">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <h3>Your cart is empty</h3>
+        <p>Add items to get started</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none;">
+      <div class="footer-row">
+        <span class="label">Subtotal</span>
+        <span class="value" id="cart-subtotal">₹0</span>
+      </div>
+      <div class="footer-row">
+        <span class="label">GST (18%)</span>
+        <span class="value" id="cart-gst">₹0</span>
+      </div>
+      <div class="footer-row total">
+        <span class="label">Total</span>
+        <span class="value" id="cart-total">₹0</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Checkout Now</button>
+      <button class="view-cart-btn" onclick="window.location.href='cart.html'">View Full Cart</button>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
