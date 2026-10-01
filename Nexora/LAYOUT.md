@@ -1,12 +1,31 @@
-# NEXORA — Layout & Structure Documentation
+# NEXORA - Layout & Structure Documentation
 
 ## Project Overview
 
-NEXORA is a premium consumer electronics e-commerce storefront built as a static website using HTML5, CSS3, and Vanilla JavaScript. The design faithfully reproduces the Google Stitch-generated screens with a "Modern White & Precision Royal Blue" theme.
+NEXORA is a premium consumer electronics e-commerce storefront. The design faithfully reproduces
+the Google Stitch-generated screens with a "Modern White & Precision Royal Blue" theme.
 
-**Brand:** NEXORA  
-**Tagline:** *"Technology, Simplified."*  
-**Currency:** Indian Rupee (INR ₹)
+**Brand:** NEXORA
+**Tagline:** *"Technology, Simplified."*
+**Currency:** Indian Rupee (INR, Rs)
+
+---
+
+## Tech Stack
+
+| Layer | Choice |
+|-------|--------|
+| Framework | Next.js 16.3.7 (App Router, Turbopack) |
+| UI | React 19.3.0 |
+| Language | TypeScript 5.5 |
+| Styling | Plain CSS 3 (global design system, no CSS framework) |
+| Icons | Material Symbols Outlined (Google Fonts) |
+| State | React Context + localStorage persistence |
+
+> Note: the original brief specified HTML5 / CSS3 / Vanilla JS only. The static vanilla build is
+> still preserved in this folder (`index.html`, `products.html`, `product.html`, `cart.html`,
+> `css/style.css`, `js/script.js`) and the Next.js app is a faithful port of it, per the user's
+> explicit request to convert to Next.js.
 
 ---
 
@@ -14,370 +33,283 @@ NEXORA is a premium consumer electronics e-commerce storefront built as a static
 
 ```
 Nexora/
-├── index.html              # Storefront Homepage (Light Theme)
-├── products.html           # Product Listing Page (Smartphones)
-├── product.html            # Product Detail Page (StealthBook Pro 16")
-├── cart.html               # Full Cart Page
-├── css/
-│   └── style.css           # Complete Design System & Components
-├── js/
-│   └── script.js           # All Interactivity & Cart Logic
-└── assets/
-    ├── images/             # 54 Product Images (from Stitch CDN)
-    │   ├── img_0.jpg       # NEXORA Logo
-    │   ├── img_9.jpg       # Leather Sleeve (Bundle)
-    │   ├── img_10.jpg      # MagDock 12-in-1 (Bundle)
-    │   ├── img_13.jpg      # Xiaomi 15 Ultra
-    │   ├── img_18.jpg      # OLED Screen (Gallery)
-    │   ├── img_21.jpg      # Galaxy S25 Ultra
-    │   ├── img_22.jpg      # StealthBook Pro 16 (Main)
-    │   ├── img_24.jpg      # Right Ports (Gallery)
-    │   ├── img_28.jpg      # Pixel 9 Pro XL
-    │   ├── img_30.jpg      # Lid View (Gallery)
-    │   ├── img_31.jpg      # Titan Ultra 16 Pro Max
-    │   ├── img_33.jpg      # ROG Phone 9 Pro
-    │   ├── img_37.jpg      # OnePlus 13
-    │   ├── img_41.jpg      # Left Ports (Gallery)
-    │   ├── img_42.jpg      # Keyboard Deck (Gallery)
-    │   └── ...             # Hero, Testimonials, Keynote images
-    └── image_urls.txt      # Source URL mapping
+|-- app/
+|   |-- layout.tsx                 # Root layout: fonts, metadata, CartProvider
+|   |-- globals.css                # Complete design system + all component styles
+|   |-- page.tsx                   # Homepage (/)
+|   |-- products/page.tsx          # Product Listing Page (/products)
+|   |-- product/[id]/page.tsx      # Product Detail Page (/product/1)
+|   `-- cart/page.tsx              # Full Cart Page (/cart)
+|-- components/
+|   |-- Header.tsx                 # Announcement bar, nav, search, cart trigger
+|   |-- Footer.tsx                 # Footer grid + payment icons
+|   |-- CartDrawer.tsx             # Slide-in cart (all routes)
+|   |-- Toast.tsx                  # Toast host + showToast() imperative helper
+|   |-- HeroSection.tsx            # Hero + spec panel + trust metrics
+|   |-- CategoryGrid.tsx           # 4 category cards
+|   |-- ProductShowcase.tsx        # 4 flagship showcase cards
+|   |-- FestivalOffer.tsx          # Countdown + bank cashback + bundle widget
+|   |-- ValueProps.tsx             # 3 value props + trade-in simulator
+|   |-- Testimonials.tsx           # 3 verified reviews
+|   |-- VIPSection.tsx             # Email capture + membership card
+|   `-- ProductCard.tsx            # Reusable PLP product card
+|-- context/
+|   `-- CartContext.tsx            # Cart state, totals, drawer open/close
+|-- data/
+|   `-- products.ts                # 6 smartphones, categories, testimonials, trade-in
+|   `-- whatsapp.ts                # WHATSAPP_NUMBER + WhatsApp order message/URL
+|-- public/assets/images/          # 54 images served at /assets/images/img_N.jpg
+|-- assets/images/                 # Source copy (static build)
+|-- LAYOUT.md                      # This document
+`-- package.json / tsconfig.json / next.config.js
 ```
+
+### Route Map
+
+| Route | Component | Rendering |
+|-------|-----------|-----------|
+| `/` | `app/page.tsx` | Static |
+| `/products` | `app/products/page.tsx` | Static |
+| `/product/[id]` | `app/product/[id]/page.tsx` | Dynamic (server) |
+| `/cart` | `app/cart/page.tsx` | Static |
+
+### Image Reference
+
+All images are referenced as `assets/images/img_N.jpg`, which resolves both for the static build
+(root-relative) and the Next app (`public/assets/images/...`).
+
+| File | Content |
+|------|---------|
+| `img_0.jpg` | NEXORA logo |
+| `img_9.jpg` | Artisan Leather Sleeve (bundle) |
+| `img_10.jpg` | MagDock 12-in-1 (bundle) |
+| `img_11.jpg` | Apex Titan Chrono watch |
+| `img_13.jpg` | Xiaomi 15 Ultra |
+| `img_18.jpg` | OLED screen (gallery) |
+| `img_20.jpg` | Sonic Buds Pro |
+| `img_21.jpg` | Galaxy S25 Ultra |
+| `img_22.jpg` | StealthBook Pro 16 (main / hero) |
+| `img_24.jpg` | Right ports (gallery) |
+| `img_28.jpg` | Pixel 9 Pro XL |
+| `img_30.jpg` | Lid view (gallery) |
+| `img_31.jpg` | Titan Ultra 16 Pro Max |
+| `img_33.jpg` | ROG Phone 9 Pro |
+| `img_36.jpg` | Ananya Sen (testimonial) |
+| `img_37.jpg` | OnePlus 13 |
+| `img_41.jpg` | Left ports (gallery) |
+| `img_42.jpg` | Keyboard deck (gallery) |
+| `img_43.jpg` | Keynote stage |
+| `img_44.jpg` | Vikramaditya Rao (testimonial) |
+| `img_45.jpg` | AcousticElite Pro headphones |
+| `img_47.jpg` | Kabir Mehta (testimonial) |
+| `img_48.jpg` | Hero visual |
+
+Source URL mapping is preserved in `assets/image_urls.txt`.
 
 ---
 
 ## Page Layouts
 
-### 1. Homepage (`index.html`)
+### 1. Homepage (`/`)
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│ ANNOUNCEMENT BAR                                        │
-│ ⚡ Republic Tech Fest Live | Track Order | Mumbai 400001│
-├─────────────────────────────────────────────────────────┤
-│ HEADER (sticky)                                         │
-│ [LOGO]  Home | Smartphones | Laptops                  │
-│         [Search Bar]  [👤] [♡] [🛒 2] [☰]            │
-├─────────────────────────────────────────────────────────┤
-│ HERO SECTION                                            │
-│  ● Republic Tech Drop 2025 Live • Tier-1 Silicon       │
-│                                                         │
-│     Engineered for the                                 │
-│     Extraordinary.                                      │
-│                                                         │
-│  [Explore the Ecosystem →]  [▶ Watch Keynote 18:24]   │
-│                                                         │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │         HERO DEVICE VISUAL (21:9)                │  │
-│  │  ┌─────────────────────────────────────────────┐  │  │
-│  │  │ Hardware Benchmark: M4-MAX • 4.5GHz        │  │  │
-│  │  │ Thermal: 0dB Silent | Display: 2400 Nits  │  │  │
-│  │  │                              [Live Specs →]│  │  │
-│  │  └─────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────┘  │
-│                                                         │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐  │
-│  │ ₹0 Down  │ │ 15-Min   │ │ 2-Year   │ │ 100%     │  │
-│  │ No-Cost  │ │ Hyper    │ │ Official │ │ Genuine  │  │
-│  │ EMI      │ │ Dispatch │ │ Warranty │ │ Serial   │  │
-│  └──────────┘ └──────────┘ └──────────┘ └──────────┘  │
-├─────────────────────────────────────────────────────────┤
-│ CATEGORY GRID — "Explore the Ecosystem"                 │
-│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐   │
-│  │ 📱 Smartphones│ │ 💻 Laptops   │ │ 📷 Cameras   │   │
-│  │ FROM ₹19,999 │ │ FROM ₹...    │ │ FROM ₹...    │   │
-│  │ Explore →    │ │ Explore →    │ │ Explore →    │   │
-│  └──────────────┘ └──────────────┘ └──────────────┘   │
-│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐   │
-│  │ 🔌 Docks     │ │ 🎧 Audio     │ │ ⌚ Smartwatch │   │
-│  │ FROM ₹...    │ │ FROM ₹...    │ │ FROM ₹...    │   │
-│  └──────────────┘ └──────────────┘ └──────────────┘   │
-├─────────────────────────────────────────────────────────┤
-│ PRODUCT SHOWCASE — "Four Milestones. Zero Compromise."  │
-│  ┌─────────────────────┐ ┌─────────────────────┐      │
-│  │ M4 Pro / Max        │ │ 3nm Bionic Ultra     │      │
-│  │ StealthBook Pro 16" │ │ Phantom 16 Pro       │      │
-│  │ [specs chips]       │ │ [specs chips]       │      │
-│  │ ┌─────────────────┐ │ │ ┌─────────────────┐ │      │
-│  │ │   [IMAGE 16:10] │ │ │ │   [IMAGE 16:10] │ │      │
-│  │ └─────────────────┘ │ │ └─────────────────┘ │      │
-│  │ ₹2,49,900 ₹2,69,900│ │ ₹1,34,900 ₹1,49,900│      │
-│  │ [Pre-Order Now]    │ │ [Pre-Order Now]    │      │
-│  └─────────────────────┘ └─────────────────────┘      │
-│  ┌─────────────────────┐ ┌─────────────────────┐      │
-│  │ Lossless 24-bit     │ │ 100M Dive Certified │      │
-│  │ AcousticElite Pro   │ │ Apex Titan Chrono   │      │
-│  │ ₹34,990 ₹39,990    │ │ ₹79,900 ₹89,900    │      │
-│  └─────────────────────┘ └─────────────────────┘      │
-├─────────────────────────────────────────────────────────┤
-│ FESTIVAL OFFER SPOTLIGHT                                │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │ 🔥 Republic Tech Fest Exclusive                  │  │
-│  │ Instant ₹10,000 Bank Cashback + Free Buds Pro    │  │
-│  │                                                   │  │
-│  │ [09]:[42]:[18]  Limited to 500 units             │  │
-│  │  384 Claimed across India                        │  │
-│  │                                                   │  │
-│  │ [🎫 Claim VIP Launch Pass]  Auto-applied at ...  │  │
-│  │                                                   │  │
-│  │  ┌─────────────────────────────────────────────┐  │  │
-│  │  │ FREE (₹14,990)                              │  │  │
-│  │  │ [Sonic Buds Pro Image]                      │  │  │
-│  │  │ Festive Coupon: REPUBLIC10K                 │  │  │
-│  │  │ Free Express Air Delivery: Included         │  │  │
-│  │  └─────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────┘  │
-├─────────────────────────────────────────────────────────┤
-│ VALUE PROPS — "The Nexora Standard"                     │
-│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐    │
-│  │ ✓ Direct OEM │ │ ✈ White-Glove│ │ ↻ Trade-In   │    │
-│  │   Silicon    │ │   Concierge  │ │   Credit     │    │
-│  │ Apple Auth.  │ │ Zero-Downtime│ │ [Calculator] │    │
-│  │ Sony Alpha   │ │ Guarantee    │ │ ₹42,000      │    │
-│  └──────────────┘ └──────────────┘ └──────────────┘    │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │ 🎧 24x7 Priority Concierge & Enterprise Procure  │  │
-│  │ [Enterprise Sales]  [💬 Live Chat (90s reply)]   │  │
-│  └───────────────────────────────────────────────────┘  │
-├─────────────────────────────────────────────────────────┤
-│ TESTIMONIALS — "Built for India's Leading Creators"     │
-│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐    │
-│  │ ★★★★★        │ │ ★★★★★        │ │ ★★★★★        │    │
-│  │ "We ordered  │ │ "The trade-in│ │ "The Acoustic │    │
-│  │  three M4..."│ │  program is  │ │  Elite Pro..."│    │
-│  │  [📷] Kabir  │ │  [📷] Ananya │ │  [📷] Vikram │    │
-│  │  Mehta, DoP  │ │  Sen, BLR    │ │  Rao, Cyber │    │
-│  └──────────────┘ └──────────────┘ └──────────────┘    │
-├─────────────────────────────────────────────────────────┤
-│ VIP MEMBERSHIP — "Nexora VIP Priority Access"           │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │ 💳 Receive ₹1,500 Instant Welcome Credit          │  │
-│  │ [email input]              [Claim ₹1,500 Voucher]│  │
-│  │ ✓ Welcome! Voucher code NEXORAVIP1500 sent...    │  │
-│  │                                                   │  │
-│  │  ┌─────────────────────────────────────────────┐  │  │
-│  │  │ ⚡ NEXORA BLACK          PRIORITY PASS     │  │  │
-│  │  │ Tier-1 Member Privileges                    │  │  │
-│  │  │ Instant Credit: ₹1,500.00  Metro: Ultra 15m│  │  │
-│  │  │ •••• 8829              EXP 12/28           │  │  │
-│  │  └─────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────┘  │
-├─────────────────────────────────────────────────────────┤
-│ FOOTER                                                  │
-│  [NEXORA Logo]                                           │
-│  Premium consumer electronics...                         │
-│  Shop: Smartphones|Laptops|Cameras|Docks                │
-│  Support: Track|Store|Support|Warranty|Returns           │
-│  Company: About|Careers|Press|Blog|Contact               │
-│  © 2025 NEXORA | UPI Visa Mastercard RuPay HDFC ICICI   │
-└─────────────────────────────────────────────────────────┘
++----------------------------------------------------------+
+| ANNOUNCEMENT BAR                                          |
+|  Republic Tech Fest Live | Track Order | Mumbai 400001   |
++----------------------------------------------------------+
+| HEADER (sticky)                                           |
+|  [LOGO]   Home | Smartphones | Laptops                   |
+|           [ Search Bar ]   [a] [heart] [cart 2] [burger]  |
++----------------------------------------------------------+
+| HERO                                                      |
+|   [status badge: Republic Tech Drop 2025 Live]           |
+|   Engineered for the Extraordinary.                       |
+|   [sub-copy]                                              |
+|   [Explore the Ecosystem]                                 |
+|   [hero visual + floating spec panel]                     |
+|   [ 4x trust metric tiles ]                               |
++----------------------------------------------------------+
+| CATEGORY GRID                                             |
+|   Smartphones | Laptops | Cameras | Docks & Chargers      |
++----------------------------------------------------------+
+| FLAGSHIP SHOWCASE  (4 cards)                              |
+|   [badge] [title] [desc] [spec chips]                     |
+|   [image]                                                 |
+|   [Starting From price]      [Pre-Order Now]              |
++----------------------------------------------------------+
+| FESTIVAL OFFER                                            |
+|   [Countdown HH : MM : SS]  [Claim VIP Launch Pass]       |
+|   [complimentary bundle widget]                           |
++----------------------------------------------------------+
+| VALUE PROPS (3 cards + enterprise bar)                    |
+|   Trade-in simulator select -> live credit readout        |
++----------------------------------------------------------+
+| TESTIMONIALS (3 cards)                                    |
++----------------------------------------------------------+
+| VIP SECTION                                               |
+|   [email capture]                    [membership card]    |
++----------------------------------------------------------+
+| FOOTER  (brand | Shop | Support | Company)               |
++----------------------------------------------------------+
+```
+
+Note: the "Watch Hardware Keynote (4K)" hero button was removed per requirements. Only
+`Explore the Ecosystem` remains in the hero CTA group.
+
+### 2. Product Listing Page (`/products`)
+
+```
++----------------------------------------------------------+
+| Breadcrumb: Home / Electronics / Smartphones              |
++----------------------------------------------------------+
+| CATEGORY HEADER                                           |
+|   [pulse tag] Flagship Smartphones & Foldables            |
+|   [6 filter pills]                                        |
++----------------------------------------------------------+
+| +--------------------+------------------------------------+
+| | FILTER SIDEBAR     | TOOLBAR                             |
+| | - Price range      |  [active filter chips]  [Sort v]    |
+| | - Manufacturer     |  [grid | list toggle]                |
+| | - Memory (RAM)     +------------------------------------+
+| | - Storage          | PRODUCT GRID (ProductCard)          |
+| | - Benefits         |  [badge] [wishlist] [image]         |
+| | - Ratings          |  [delivery] [rating] [name]         |
+| |                    |  [color swatches]                   |
+| |                    |  [price] [old price] [save]         |
+| |                    |  [EMI] [Add to Cart]                |
+| +--------------------+------------------------------------+
++----------------------------------------------------------+
+```
+
+### 3. Product Detail Page (`/product/[id]`)
+
+```
++----------------------------------------------------------+
+| Breadcrumb: Home / Laptops / Creator & Workstation / ... |
++----------------------------------------------------------+
+| +--------------------------+-----------------------------+
+| | GALLERY                  | PRODUCT INFO                |
+| |  [main image + badges]   |  [class tag] [SKU]          |
+| |  [wishlist] [zoom]       |  h1 + rating row            |
+| |  [360 Studio View]       |  [price / MRP / discount]   |
+| |  [6 thumbnails]          |  [bank offer] [EMI]         |
+| |  [3x trust badges]       |                             |
+| |                          | CONFIGURATOR                |
+| |                          |  1. Finish / Colorway       |
+| |                          |  2. System Silicon          |
+| |                          |  3. Unified Memory          |
+| |                          |  4. NVMe Storage            |
+| |                          |  [Care+ protection]         |
+| |                          |  [pincode checker]          |
+| |                          |  [qty] [Add to Cart]        |
+| |                          |  [Instant Buy]              |
+| +--------------------------+-----------------------------+
+| TABS: Specs | Features | Reviews | Warranty               |
++----------------------------------------------------------+
+| BUNDLE BUILDER (3 items + summary + Add All)             |
++----------------------------------------------------------+
+```
+
+### 4. Cart Page (`/cart`)
+
+```
++----------------------------------------------------------+
+| Your Shopping Cart                                        |
+| +-------------------------------------+------------------+
+| | CART ITEM                           | ORDER SUMMARY   |
+| |  [image] name                       |  Subtotal       |
+| |         variant                    |  GST (18%)      |
+| |  [- n +] price         [delete]     |  Shipping FREE  |
+| +-------------------------------------+  Total          |
+| | (repeated per item)                 |  [Checkout]     |
+| |                                     |  [Continue]     |
+| +-------------------------------------+------------------+
+| EMPTY STATE: icon + "Your cart is empty" + Continue CTA  |
++----------------------------------------------------------+
 ```
 
 ---
 
-### 2. Product Listing Page (`products.html`)
+## Cart Drawer (Global - slides from right)
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│ ANNOUNCEMENT BAR + HEADER (same as homepage)            │
-├─────────────────────────────────────────────────────────┤
-│ BREADCRUMB: Home / Electronics / Smartphones           │
-│                                          [48 Available] │
-├─────────────────────────────────────────────────────────┤
-│ CATEGORY HEADER                                         │
-│  ● NEXT-GEN SILICON & PERISCOPE OPTICS                  │
-│  Flagship Smartphones & Foldables                       │
-│  Experience blistering 3nm architectures...              │
-│                                    [✓ 1 Year Assured]   │
-├─────────────────────────────────────────────────────────┤
-│ FILTER PILLS: [All] [Flagships] [Foldables] [Under...] │
-├──────────────────────┬──────────────────────────────────┤
-│ FILTER SIDEBAR       │ TOOLBAR                          │
-│ ┌──────────────────┐ │ Active: [Brand:Apple ×]          │
-│ │ Filters  Clear   │ │         [Storage:256GB+ ×]       │
-│ │ Price: ₹15k-1.8L │ │         [₹50k-₹1.5L ×]          │
-│ │ [====slider====] │ │ Sort: [Featured ▼] [▦] [☰]     │
-│ │ MIN: 15,000      │ ├──────────────────────────────────┤
-│ │ MAX: 1,80,000    │ │ PRODUCT GRID (3 columns)         │
-│ │                  │ │ ┌────────┐ ┌────────┐ ┌────────┐ │
-│ │ Manufacturer     │ │ │[BEST-  │ │[AI     │ │[PURE   │ │
-│ │ ☑ Apple    14   │ │ │SELLER] │ │POWERED]│ │GEMINI] │ │
-│ │ ☑ Samsung  18   │ │ │  [img] │ │  [img] │ │  [img] │ │
-│ │ ☐ Pixel     8   │ │ │Free 1D │ │S-Pen   │ │Titan M2│ │
-│ │ ☐ OnePlus  12   │ │ │★4.9    │ │★4.8    │ │★4.7    │ │
-│ │ ☐ Xiaomi    9   │ │ │Titan...│ │Galaxy..│ │Pixel...│ │
-│ │ ☐ Asus ROG  5   │ │ │●●●●○   │ │●●●○    │ │●●●○    │ │
-│ │                  │ │ │₹1,34,..│ │₹1,29,..│ │₹1,09,..│ │
-│ │ Memory (RAM)     │ │ │EMI ₹6k │ │EMI ₹6k │ │EMI ₹5k │ │
-│ │ [8GB][12GB]      │ │ │[Add to │ │[Add to │ │[Add to │ │
-│ │ [16GB✓][24GB]    │ │ │ Cart]  │ │ Cart]  │ │ Cart]  │ │
-│ │                  │ │ └────────┘ └────────┘ └────────┘ │
-│ │ Storage          │ │ ┌────────┐ ┌────────┐ ┌────────┐ │
-│ │ [128GB][256GB✓]  │ │ │[SNAP-  │ │[185Hz  │ │[LEICA  │ │
-│ │ [512GB][1TB]     │ │ │DRAGON] │ │MATRIX] │ │OPTICS] │ │
-│ │                  │ │ │  [img] │ │  [img] │ │  [img] │ │
-│ │ Purchase Benefits│ │ │100W    │ │AirTrig │ │Leica   │ │
-│ │ ☑ No-Cost EMI    │ │ │★4.8    │ │★4.6    │ │★4.7    │ │
-│ │ ☐ Exchange Bonus │ │ │OnePlus │ │ROG     │ │Xiaomi  │ │
-│ │ ☑ Express 24H    │ │ │₹69,999 │ │₹84,999 │ │₹79,999 │ │
-│ │                  │ │ │[Add to │ │[Add to │ │[Add to │ │
-│ │ Customer Ratings │ │ │ Cart]  │ │ Cart]  │ │ Cart]  │ │
-│ │ ○ 4.5★ & above   │ │ └────────┘ └────────┘ └────────┘ │
-│ │ ○ 4.0★ & above   │ │                                  │
-│ └──────────────────┘ └──────────────────────────────────┘
-├─────────────────────────────────────────────────────────┤
-│ FOOTER (same as homepage)                               │
-└─────────────────────────────────────────────────────────┘
++--------------------------------+
+| [cart] Your Cart (2 items)  [x]|
++--------------------------------+
+| Free Express Shipping Unlocked  |
+| [====progress bar====]          |
++--------------------------------+
+| [img] name                     |
+|       variant                  |
+|       Rs.1,34,900  [- 1 +] [d]|
+| [img] name                     |
+|       variant                  |
+|       Rs.1,29,999  [- 2 +] [d]|
++--------------------------------+
+| Subtotal            Rs.2,64,899|
+| GST (18%)           Rs.47,681 |
+| Total               Rs.3,12,580|
+| [ Checkout Now ]               |
+| [ View Full Cart ]             |
++--------------------------------+
 ```
 
----
+### Checkout Now -> WhatsApp
 
-### 3. Product Detail Page (`product.html`)
+There is **no checkout page and no payment gateway**. The drawer's
+"Checkout Now" button hands the whole order to WhatsApp as a pre-filled message.
 
-```
-┌─────────────────────────────────────────────────────────┐
-│ ANNOUNCEMENT BAR + HEADER (same as homepage)            │
-├─────────────────────────────────────────────────────────┤
-│ BREADCRUMB: Home / Laptops / Creator & Workstation /    │
-│             Nexora StealthBook Pro 16"                   │
-├────────────────────────────┬────────────────────────────┤
-│ GALLERY (sticky)           │ PRODUCT INFO               │
-│ ┌────────────────────────┐ │ [NEXORA PRO COMPUTING]     │
-│ │                        │ │ SKU: NXR-SB16-M4M          │
-│ │    MAIN IMAGE (4:3)    │ │                            │
-│ │                        │ │ Nexora StealthBook Pro 16" │
-│ │  [In Stock] [Save ₹20k]│ │ Workstation (2025 Edition) │
-│ │  [♡] [🔍]  [360°]     │ │                            │
-│ │                        │ │ ★4.9 | 1,428 Buyers | 412  │
-│ └────────────────────────┘ │                            │
-│ ┌──┐┌──┐┌──┐┌──┐┌──┐     │ ┌────────────────────────┐ │
-│ │LID││OLED││P-L││P-R││DECK│ │ ₹2,19,900 ₹2,39,900    │ │
-│ └──┘└──┘└──┘└──┘└──┘     │ │ Save ₹20,000 (8% OFF)   │ │
-│                            │ │ Incl. all taxes & GST   │ │
-│ TRUST BADGES:              │ │                        │ │
-│ 🚀 Express Air             │ │ 💳 Save ₹10,000         │ │
-│ 📄 GST Invoice              │ │ Net: ₹2,09,900         │ │
-│ ↻ 7 Days Policy             │ │                        │ │
-│                            │ │ EMI from ₹18,325/mo     │ │
-│                            │ └────────────────────────┘ │
-│                            │                            │
-│                            │ CONFIGURATOR:              │
-│                            │ 1. Color: [●Black][○Silver]│
-│                            │    [○Midnight]             │
-│                            │ 2. Chip: [M4 Pro][✓M4 Max] │
-│                            │    [M4 Max Ultra +₹45k]    │
-│                            │ 3. RAM: [18GB][✓36GB]      │
-│                            │    [64GB][128GB]           │
-│                            │ 4. Storage: [512GB][✓1TB]  │
-│                            │    [2TB][4TB]              │
-│                            │                            │
-│                            │ ☐ Nexora Care+ +₹12,999    │
-│                            │                            │
-│                            │ 📍 Pincode: [400001] [Verify]│
-│                            │ ✓ Free Express Delivery    │
-│                            │                            │
-│                            │ [−] 1 [+] [Add to Cart • ₹]│
-│                            │ [⚡ Instant Buy with UPI]   │
-├────────────────────────────┴────────────────────────────┤
-│ TABS SECTION                                            │
-│ [Technical Specs] [Key Features] [Reviews 1,428] [Warranty]│
-│                                                         │
-│ SPECS GRID (3 columns):                                │
-│ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐       │
-│ │ Silicon     │ │ Display     │ │ Power       │       │
-│ │ M4 Max      │ │ 16.2" XDR   │ │ 100Wh       │       │
-│ │ 14-Core CPU │ │ 3456x2234   │ │ 22hr video  │       │
-│ │ 32-Core GPU │ │ 1600 nits   │ │ 140W GaN    │       │
-│ └─────────────┘ └─────────────┘ └─────────────┘       │
-│ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐       │
-│ │ I/O Ports   │ │ Acoustics   │ │ Dimensions  │       │
-│ │ 3x TB4      │ │ 6-speaker   │ │ 1.68cm thin │       │
-│ │ SDXC        │ │ Dolby Atmos │ │ 2.14kg      │       │
-│ │ HDMI 2.1    │ │ 3-mic array │ │ Aluminum    │       │
-│ └─────────────┘ └─────────────┘ └─────────────┘       │
-├─────────────────────────────────────────────────────────┤
-│ BUNDLE BUILDER — "Equip Your Studio Rig"                │
-│ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────────┐ │
-│ │THIS ITEM │ │MagDock   │ │Leather   │ │Bundle Price│ │
-│ │[img]     │ │[img]     │ │Sleeve    │ │₹2,29,380   │ │
-│ │StealthBook│ │₹8,990   │ │[img]     │ │~~₹2,32,380~~│ │
-│ │₹2,19,900 │ │          │ │₹3,490   │ │Save ₹3,000 │ │
-│ └──────────┘ └──────────┘ └──────────┘ │[Add All 3]  │ │
-│                                         └────────────┘ │
-├─────────────────────────────────────────────────────────┤
-│ FOOTER (same as homepage)                               │
-└─────────────────────────────────────────────────────────┘
-```
+| File | Responsibility |
+|------|----------------|
+| `lib/whatsapp.ts` | `WHATSAPP_NUMBER` constant, message builder, URL builder, deep-link opener |
+| `components/CartDrawer.tsx` | `handleCheckoutNow()` reads live cart state and calls `openWhatsApp()` |
+| `context/CartContext.tsx` | Supplies `cart`, `subtotal`, `gst`, `shipping`, `total` (read-only) |
 
----
-
-### 4. Cart Page (`cart.html`)
+Flow:
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│ ANNOUNCEMENT BAR + HEADER (same as homepage)            │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  Your Shopping Cart                                     │
-│                                                         │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │  [img]  Product Name                              │  │
-│  │         Variant specs                             │  │
-│  │                              [−] 1 [+]  ₹Price   │  │
-│  │                              [🗑️]                 │  │
-│  └───────────────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │  [img]  Product Name                              │  │
-│  │         Variant specs                             │  │
-│  │                              [−] 2 [+]  ₹Price   │  │
-│  │                              [🗑️]                 │  │
-│  └───────────────────────────────────────────────────┘  │
-│                                                         │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │  Order Summary                                    │  │
-│  │  Subtotal:                            ₹XXX,XXX   │  │
-│  │  GST (18%):                           ₹XX,XXX    │  │
-│  │  Shipping:                             FREE       │  │
-│  │  ─────────────────────────────────────────────    │  │
-│  │  Total:                                ₹XXX,XXX   │  │
-│  │                                                   │  │
-│  │  [Proceed to Checkout]                            │  │
-│  │  [← Continue Shopping]                            │  │
-│  └───────────────────────────────────────────────────┘  │
-│                                                         │
-├─────────────────────────────────────────────────────────┤
-│ FOOTER (same as homepage)                               │
-└─────────────────────────────────────────────────────────┘
+click "Checkout Now"
+  -> cart items + subtotal/gst/shipping/total from CartContext
+  -> buildWhatsAppOrderMessage()   plain text, every line item
+  -> encodeURIComponent()
+  -> desktop: window.open('https://wa.me/<number>?text=...', '_blank')
+     mobile: location = 'whatsapp://send?phone=<number>&text=...'
+             (falls back to the wa.me link after 1.5s if the app is absent)
+  -> closeCart()
 ```
 
----
-
-## Cart Drawer (Global — slides from right)
+Generated message:
 
 ```
-┌──────────────────────────────┐
-│ 🛒 Your Cart (2 items)    [×]│
-├──────────────────────────────┤
-│ ✓ Free Express Shipping!     │
-│ ████████████ 100% (₹1,999+) │
-├──────────────────────────────┤
-│ ┌────┐ Product Name          │
-│ │img │ Variant specs         │
-│ └────┘          [−] 1 [+] ₹ │
-│                 [🗑️]        │
-│ ┌────┐ Product Name          │
-│ │img │ Variant specs         │
-│ └────┘          [−] 1 [+] ₹ │
-│                 [🗑️]        │
-├──────────────────────────────┤
-│ Subtotal:           ₹XXX,XXX│
-│ GST (18%):          ₹XX,XXX │
-│ ─────────────────────────── │
-│ Total:              ₹XXX,XXX│
-│                              │
-│ [    Checkout Now    ]       │
-│ [    View Full Cart  ]       │
-└──────────────────────────────┘
+Hello, I want to place an order.
+
+Order Details:
+
+1. Product: <name>
+Configuration: <specs / variants>
+Quantity: <qty>
+Line Total: Rs <price x qty>
+
+...
+
+Total Items: <n> (<units> units)
+
+Subtotal: Rs <subtotal>
+GST (18%): Rs <gst>
+Shipping: Rs <shipping>
+Total: Rs <total>
+
+Please confirm availability and delivery details.
 ```
+
+**Changing the business number:** edit `WHATSAPP_NUMBER` in `lib/whatsapp.ts`.
+It must be digits only, full international format, country code first, with no
+`+`, spaces or dashes -- e.g. India +91 62823 28496 is `"916282328496"`.
+`isWhatsAppConfigured()` validates the format and the drawer shows a toast
+instead of opening a broken link if it is ever left empty or malformed.
+
+The cart is **not** cleared on checkout, so `nexora_cart` in localStorage is
+untouched and the customer keeps their cart while confirming on WhatsApp.
 
 ---
 
@@ -415,6 +347,14 @@ Nexora/
 | Label Caps | Plus Jakarta Sans | 11px | 700 | 14px |
 | Spec Code | JetBrains Mono | 12px | 500 | 16px |
 
+Font families map to CSS custom properties:
+
+```
+--font-display: 'Outfit', sans-serif
+--font-body:    'Plus Jakarta Sans', sans-serif
+--font-mono:    'JetBrains Mono', monospace
+```
+
 ### Spacing Scale
 
 | Token | Value |
@@ -448,58 +388,108 @@ Nexora/
 | `--shadow-primary` | `0 8px 20px rgba(37,99,235,0.25)` | Primary buttons |
 | `--shadow-glow` | `0 0 24px rgba(6,182,212,0.45)` | Glow effects |
 
+### Stylesheet Structure (`app/globals.css`)
+
+The design system is one flat global stylesheet with no CSS framework. Sections
+appear in cascade order:
+
+| Section | Covers |
+|---------|--------|
+| Design tokens (`:root`) | Colors, fonts, spacing, radius, shadow tokens |
+| Reset | `box-sizing`, margin/purge, `body` font stack |
+| ANNOUNCEMENT BAR | Top promo strip |
+| HEADER / NAV | Logo, search, nav links, cart button, hamburger |
+| MOBILE MENU | Slide-in drawer + overlay |
+| HERO SECTION | Home hero, CTAs, trust metrics |
+| CATEGORY GRID | Home category tiles |
+| PRODUCT SHOWCASE | Home featured row |
+| FESTIVAL OFFER | Claimable offer widget |
+| VALUE PROPS / TESTIMONIALS / VIP SECTION | Home lower sections |
+| PRODUCT CARD | Reusable card used by PLP + showcase |
+| PRODUCT LISTING PAGE | Breadcrumb, category header, filter pills, PLP grid, filter sidebar, toolbar, sort, view toggle |
+| PRODUCT DETAIL PAGE | Gallery, configurator, specs, reviews |
+| TABS SECTION | PDP tabbed panels |
+| BUNDLE BUILDER | PDP bundle widget |
+| CART DRAWER | Slide-over cart |
+| TOAST NOTIFICATIONS | Toast stack |
+| RESPONSIVE BREAKPOINTS | Tablet / mobile / small-mobile overrides |
+
+Every class emitted by a React component must have a matching rule in this file.
+When adding a component, add its styles to the matching section above rather than
+introducing an inline `style` object, so the cascade stays predictable.
+
+### Image Path Convention
+
+Two builds live side by side and resolve images differently:
+
+| Build | Path used | Resolves to |
+|-------|-----------|-------------|
+| Static vanilla (`index.html`, `products.html`, ...) | `assets/images/img_N.jpg` | `/assets/images/img_N.jpg` |
+| Next.js app (all `.tsx` / `.ts`) | `/assets/images/img_N.jpg` | `/assets/images/img_N.jpg` |
+
+Next.js routes are nested (`/product/1`), so **React image paths must be
+root-absolute**. A relative `assets/images/...` on `/product/1` resolves to
+`/product/assets/images/...` and 404s. Files live in `public/assets/images/`.
+
 ---
 
 ## Responsive Breakpoints
 
 | Breakpoint | Width | Layout Changes |
 |------------|-------|-----------------|
-| Desktop | ≥1024px | Full nav, 4-col category grid, 3-col product grid, 2-col PDP |
-| Tablet | 768–1023px | Hamburger menu, 2-col grids, stacked PDP |
+| Desktop | >=1024px | Full nav, 4-col category grid, 3-col product grid, 2-col PDP |
+| Tablet | 768-1023px | Hamburger menu, 2-col grids, stacked PDP |
 | Mobile | <768px | Hamburger menu, 1-col category, 2-col product, stacked PDP |
 | Small Mobile | <480px | 1-col product grid |
 
 ---
 
-## JavaScript Modules
+## Application Logic
 
-### Cart System
-- `loadCart()` — Load from localStorage
-- `saveCart()` — Persist to localStorage
-- `addToCart(productId, qty)` — Add item
-- `removeFromCart(productId)` — Remove item
-- `updateQty(productId, delta)` — Change quantity
-- `getCartCount()` — Total items
-- `getCartSubtotal()` — Pre-tax total
-- `getCartGST()` — 18% tax
-- `getCartTotal()` — Final total
+### Cart Context (`context/CartContext.tsx`)
 
-### UI System
-- `openCart()` / `closeCart()` — Cart drawer
-- `toggleMobileMenu()` — Mobile navigation
-- `showToast(label, message)` — Toast notifications
-- `switchTab(tabId, btn)` — PDP tabs
-- `switchImage(index, btn)` — Gallery thumbnails
+| Member | Description |
+|--------|-------------|
+| `cart` | Array of cart items |
+| `addToCart(item)` | Adds item, or increments qty if already present |
+| `removeFromCart(id)` | Removes a line item |
+| `updateQty(id, delta)` | Adjusts qty; drops item at 0 |
+| `clearCart()` | Empties the cart |
+| `cartCount` | Sum of all quantities |
+| `subtotal` | Sum of price x qty |
+| `gst` | `round(subtotal * 0.18)` |
+| `total` | `subtotal + gst` |
+| `isCartOpen` / `openCart()` / `closeCart()` | Drawer visibility |
 
-### Product Configurator
-- `selectColor(name, btn)` — Color selection
-- `selectChip(type, delta, btn)` — Processor selection
-- `selectRam(amount, delta, btn)` — Memory selection
-- `selectStorage(cap, delta, btn)` — Storage selection
-- `toggleCarePlus(input)` — Protection plan
-- `calculateTotal()` — Live price update
-- `updateQty(delta)` — Quantity stepper
+Persistence: localStorage key `nexora_cart`. Free shipping threshold is Rs. 1,999.
 
-### Filters & Sorting
-- `sortProducts(sortBy)` — Sort dropdown
-- `updatePriceReadout(value)` — Price slider
-- `resetFilters()` — Clear all filters
+### Toast (`components/Toast.tsx`)
 
-### Calculators
-- `calculateTradeValue()` — Trade-in estimator
-- `updateModalValuation()` — Modal trade-in
-- `checkPincode()` — Delivery checker
-- `startCountdown()` — Festival timer
+`showToast(label, message)` pushes a toast that auto-dismisses after 3s. Exported as a plain
+function so non-React modules can trigger it; the `<Toast />` host registers the callback on mount.
+
+### Product Configurator (`app/product/[id]/page.tsx`)
+
+Base price and deltas, quantity clamped to 1-10:
+
+| Option | Delta |
+|--------|-------|
+| M4 Pro | -25,000 |
+| M4 Max | 0 (default) |
+| M4 Max Ultra | +45,000 |
+| RAM 18GB / 36GB / 64GB / 128GB | -18,000 / 0 / +36,000 / +90,000 |
+| Storage 512GB / 1TB / 2TB / 4TB | -15,000 / 0 / +36,000 / +80,000 |
+| Nexora Care+ | +12,999 |
+
+State: `selectedColor`, `selectedChip`, `selectedRam`, `selectedStorage`, `carePlus`, `qty`,
+`activeTab`, `selectedImage`, `pincode`.
+
+### Filters, Sorting & Calculators (`app/products/page.tsx`)
+
+- Price range slider, manufacturer checkboxes, RAM / storage chips, benefit checkboxes, rating filter
+- Sort: featured, price asc/desc, rating, newest
+- Grid / list view toggle
+- Trade-in estimator (home), festival countdown, pincode validation, VIP email capture
 
 ---
 
@@ -508,7 +498,7 @@ Nexora/
 - Semantic HTML5 elements (`header`, `nav`, `main`, `section`, `footer`)
 - ARIA labels on icon buttons
 - Keyboard-accessible controls (Tab, Enter, Escape)
-- Proper heading hierarchy (h1 → h2 → h3)
-- Alt text on all images
+- Proper heading hierarchy (h1 -> h2 -> h3)
+- Alt text on all images, with an `onError` fallback to the logo
 - Focus states on interactive elements
 - Color contrast meets WCAG AA standards
